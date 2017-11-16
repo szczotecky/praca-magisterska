@@ -1,0 +1,28 @@
+{% extends 'polls/base.html' %}
+{% block main_content %}
+
+			<div class="container">
+
+			  <h2>Badanie sentymentów</h2>
+			  <!--/ PROGRESS-->
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuenow="70"
+					aria-valuemin="0" aria-valuemax="100" style="width:70%">
+					70%
+				</div>
+			</div>
+			  
+			  <!--/ TUTAJ TREŚĆ WPISU!!!!-->
+			  <div class="well"> {{ question.question_text}} </div>
+
+                <ul>
+                    {% for choice in question.choice_set.all %}
+                    <li>{{choice.answer_text}} - {{choice.votes}} vote{{choice.votes|pluralize}}</li>
+                    {% endfor %}
+                </ul>
+
+                <a href = "{% url 'polls:detail' question_id }%"> GŁOSUJ DALEJ </a>
+
+			</div>
+
+{% endblock %}

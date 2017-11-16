@@ -1,0 +1,14 @@
+{% extends 'polls/base.html' %}
+{% block main_content %}
+
+<!--/ hrefa losować po przejsciu do kolejnego pytania -->
+
+		  <a href="{{number}}" class="btn btn-submit">ANKIETA</a>
+
+            <h2>O co chodzi?</h2>
+
+            <p>Aby program komputerowy mógł rozpoznawać sentymenty w danej wiadomości należy go tego nauczyć.
+Potrzebna jest do tego jak największa ilość danych uczących,
+w tym przypadku jest to nic innego jak wpisy z nadanymi przez Ciebie - eksperta etykietami dotyczącymi sentymentów zawartych w wiadomościach. </p>
+
+{% endblock %}
